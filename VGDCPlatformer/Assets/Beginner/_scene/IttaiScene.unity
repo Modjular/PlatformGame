@@ -279,7 +279,7 @@ GameObject:
   m_Layer: 0
   m_Name: positionB
   m_TagString: Untagged
-  m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -307,7 +307,7 @@ GameObject:
   m_Layer: 0
   m_Name: positionA
   m_TagString: Untagged
-  m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -478,13 +478,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d351376ad14f334fad6e5d52f43a05f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movingPlatform: {fileID: 591533916}
-  position1: {fileID: 1649495265}
-  position2: {fileID: 1245904742}
+  movingPlatform: {fileID: 0}
+  position1: {fileID: 0}
+  position2: {fileID: 0}
   newPosition: {x: 0, y: 0, z: 0}
   state: 
-  platformVelocity: 2
-  movementTime: 3
+  platformVelocity: 0
+  movementTime: 0
 --- !u!4 &1963318885
 Transform:
   m_ObjectHideFlags: 0
