@@ -40,6 +40,10 @@ public class PlayerMovementBeginner : MonoBehaviour {
             m_Grounded = false;
             m_RigidBody2D.AddForce(new Vector2(m_RigidBody2D.velocity.x, m_JumpForce));
         }
+        if (m_Grounded == false)
+        {
+            horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed / 2;
+        }
     }
 
     // FixedUpdate is called multiple times per frame at different rates
