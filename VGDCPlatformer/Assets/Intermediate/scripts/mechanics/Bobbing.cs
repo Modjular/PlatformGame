@@ -11,6 +11,7 @@ public class Platform : MonoBehaviour {
         //this allows movement of the player with moving platforms
         if (collision.gameObject.CompareTag("Player"))
         {
+            
             collision.collider.transform.SetParent(transform);
         }
     }

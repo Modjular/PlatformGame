@@ -45,14 +45,17 @@ public class MovingPlatform : MonoBehaviour
         if (state == "Move1")
         {
             state = "Move2";
+            newPosition = position2.position;
         }
         else if (state == "Move2")
         {
             state = "Move1";
+            newPosition = position1.position;
         }
         else if (state == "") //default position
         {
             state = "Move2";
+            newPosition = position2.position;
         }
         Invoke("ChangeTarget", movementTime);
     }
