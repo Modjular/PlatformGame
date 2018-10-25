@@ -2,39 +2,29 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MovingPlatform : MonoBehaviour
-{
-
-    //manages platform movement at different points
-    [Header("Platform Positions")]
-    public Transform movingPlatform; //platform gameObject that we will be moving
-
-    /*Points where the platform  will move*/
-    public Transform position1;
-    public Transform position2;
-    [HideInInspector] public Vector3 newPosition; //(X, Y, Z) coordinates of the platform
-
-    [Space]
-
+public class ConstantSpeed : MonoBehaviour {
     [Header("Platform Attributes")]
     public string state; //named states on where the platform should move
-
-    /*Adjusted speeds for the platform movement */
-    public float platformVelocity;
     public float movementTime;
-
-    void Start()
+    // Use this for initialization
+    void Start ()
     {
-        //initally the platform will start at some state
         ChangeTarget();
-    }
-
-    void FixedUpdate()
+	}
+	
+	// Update is called once per frame
+	void Update ()
     {
-        //update the movement of the platform
-        movingPlatform.position = Vector3.Lerp(movingPlatform.position, newPosition, platformVelocity * Time.deltaTime);
+        if (state == "Move2")
+        {
+            transform.Translate(0.1f, 0, 0);
+        }
+        if (state == "Move1")
+        {
+            transform.Translate(-0.1f, 0, 0);
+        }
+        transform.Rotate(0, 0, 0);
     }
-
     void ChangeTarget()
     {
         /*check states and move platform, then we change states to update
@@ -57,3 +47,4 @@ public class MovingPlatform : MonoBehaviour
         Invoke("ChangeTarget", movementTime);
     }
 }
+
