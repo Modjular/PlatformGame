@@ -12,7 +12,7 @@ public class DeathBox : MonoBehaviour {
         if (collision.gameObject.CompareTag("Player"))
         { 
 			// Kill the player by setting health to 0
-            Debug.Log("You were killed. To death.")
+            Debug.Log("You were killed. To death.");
             collision.gameObject.GetComponent<PlayerHealth>().TakeDamage(100000);
         }
     }
