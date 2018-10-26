@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Platform : MonoBehaviour {
+public class Bobbing : MonoBehaviour {
 
    
     public void OnCollisionEnter2D(Collision2D collision)
@@ -11,8 +11,8 @@ public class Platform : MonoBehaviour {
         //this allows movement of the player with moving platforms
         if (collision.gameObject.CompareTag("Player"))
         {
-            
             collision.collider.transform.SetParent(transform);
+            transform.Translate(0, -1f, 0);
         }
     }
 
@@ -23,6 +23,7 @@ public class Platform : MonoBehaviour {
         if (collision.gameObject.CompareTag("Player"))
         {
             collision.collider.transform.SetParent(null);
+            transform.Translate(0, 1f, 0);
         }
     }
 }

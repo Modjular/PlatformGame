@@ -9,6 +9,7 @@ public class PlayerMovementBeginner : MonoBehaviour {
     [Header("Movement Logic")]
     //=========== Moving Logic ============
     public float runSpeed = 0f;
+    public float maxSpeed = 200f;
     private float horizontalMove = 0f;
     private Vector3 m_Velocity;
 
@@ -40,6 +41,10 @@ public class PlayerMovementBeginner : MonoBehaviour {
             m_Grounded = false;
             m_RigidBody2D.AddForce(new Vector2(m_RigidBody2D.velocity.x, m_JumpForce));
         }
+        if (m_Grounded == false)
+        {
+            horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed / 2;
+        }
     }
 
     // FixedUpdate is called multiple times per frame at different rates
@@ -49,5 +54,9 @@ public class PlayerMovementBeginner : MonoBehaviour {
         m_RigidBody2D.velocity = targetVelocity;
 
         m_Grounded = Physics2D.Linecast(transform.position, m_GroundCheck.position, m_GroundLayer);
+        if (m_RigidBody2D.velocity.magnitude > maxSpeed)
+        {
+            m_RigidBody2D.velocity = m_RigidBody2D.velocity.normalized * maxSpeed;
+        }
     }
 }
