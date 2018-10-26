@@ -9,6 +9,7 @@ public class PlayerMovementBeginner : MonoBehaviour {
     [Header("Movement Logic")]
     //=========== Moving Logic ============
     public float runSpeed = 0f;
+    public float maxSpeed = 200f;
     private float horizontalMove = 0f;
     private Vector3 m_Velocity;
 
@@ -53,5 +54,9 @@ public class PlayerMovementBeginner : MonoBehaviour {
         m_RigidBody2D.velocity = targetVelocity;
 
         m_Grounded = Physics2D.Linecast(transform.position, m_GroundCheck.position, m_GroundLayer);
+        if (m_RigidBody2D.velocity.magnitude > maxSpeed)
+        {
+            m_RigidBody2D.velocity = m_RigidBody2D.velocity.normalized * maxSpeed;
+        }
     }
 }
