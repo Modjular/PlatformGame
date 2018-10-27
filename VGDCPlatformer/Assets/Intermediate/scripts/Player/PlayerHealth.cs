@@ -58,4 +58,8 @@ public class PlayerHealth : MonoBehaviour {
 		health--;
 	}
 
+	public void TakeDamage(int amt){
+		health -= amt;
+	}
+
 }
