@@ -43,7 +43,7 @@ public class PlayerMovementBeginner : MonoBehaviour {
         }
         if (m_Grounded == false)
         {
-            horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed / 2;
+            horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed * 2 / 3;
         }
     }
 
