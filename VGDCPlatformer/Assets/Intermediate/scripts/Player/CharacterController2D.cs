@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CharacterController2D : MonoBehaviour {
+public class CharacterController2D : MonoBehaviour
+{
 
     [SerializeField] private float m_JumpForce = 700f;
     [SerializeField] public int m_AirJumps = 0;
@@ -37,10 +38,6 @@ public class CharacterController2D : MonoBehaviour {
 
     void FixedUpdate()
     {
-        //checks if the player is pressing the shoot button
-        if (Input.GetButtonDown("shoot"))
-            shoot();
-
         m_Grounded = Physics2D.Linecast(transform.position, m_GroundCheck.position, m_GroundLayer);
         if (m_Grounded)
         {
@@ -106,7 +103,7 @@ public class CharacterController2D : MonoBehaviour {
 
     void JumpGravity(bool jump)
     {
-       
+
         if (jump && m_AirJumpsLeft >= 1)
         {
 
@@ -159,10 +156,5 @@ public class CharacterController2D : MonoBehaviour {
     public void JumpadOff()
     {
         m_OnJumpPad = false;
-    }
-
-    public void shoot()
-    {
-
     }
 }
