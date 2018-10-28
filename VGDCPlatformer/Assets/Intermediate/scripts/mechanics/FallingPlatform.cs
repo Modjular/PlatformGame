@@ -2,38 +2,30 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bobbing : MonoBehaviour 
+public class FallingPlatform : MonoBehaviour
 {
+    //initializing variable for rigidbody
     Rigidbody2D rb;
 
     void Start()
     {
+        //gets rb from component
         rb = GetComponent<Rigidbody2D>();
     }
+
     public void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
             collision.collider.transform.SetParent(transform);
-            collision.collider.attachedRigidbody.velocity = new Vector2(0, -2);
-            rb.velocity = new Vector2(0, -2);
+            rb.velocity = new Vector2(0, -10);
         }
     }
-
-    public void OnCollisionStay2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            collision.collider.transform.SetParent(transform);
-        }
-    }
-
     public void OnCollisionExit2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
             collision.collider.transform.SetParent(null);
-            rb.velocity = new Vector2(0, 2);
         }
     }
 }
