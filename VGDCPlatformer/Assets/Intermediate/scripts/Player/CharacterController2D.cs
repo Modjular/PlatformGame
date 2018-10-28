@@ -32,6 +32,10 @@ public class CharacterController2D : MonoBehaviour {
 
     void FixedUpdate()
     {
+        //checks if the player is pressing the shoot button
+        if (Input.GetButtonDown("shoot"))
+            shoot();
+
         m_Grounded = Physics2D.Linecast(transform.position, m_GroundCheck.position, m_GroundLayer);
         if (m_Grounded)
         {
@@ -81,7 +85,7 @@ public class CharacterController2D : MonoBehaviour {
 
     void JumpGravity(bool jump)
     {
-
+       
         if (jump && m_AirJumpsLeft >= 1)
         {
 
@@ -134,5 +138,10 @@ public class CharacterController2D : MonoBehaviour {
     public void JumpadOff()
     {
         m_OnJumpPad = false;
+    }
+
+    public void shoot()
+    {
+
     }
 }
