@@ -7,6 +7,7 @@ public class PlayerMove : MonoBehaviour {
     [SerializeField] private float runSpeed;
     float horizontalMove = 0f;
     bool jump = false;
+    bool pounce = false;
     public CharacterController2D controller;
 
     void Start()
@@ -18,16 +19,21 @@ public class PlayerMove : MonoBehaviour {
     void Update()
     {
         horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Fire1"))
         {
             jump = true;
+        }
+        if (Input.GetButton("Fire2")) 
+        {
+            pounce = true;
         }
     }
 
     private void FixedUpdate()
     {
-        controller.Move(horizontalMove * Time.fixedDeltaTime, jump);
+        controller.Move(horizontalMove * Time.fixedDeltaTime, jump, pounce);
         jump = false;
+        pounce = false;
     }
 
 }
