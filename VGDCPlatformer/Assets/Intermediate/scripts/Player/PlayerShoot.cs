@@ -6,16 +6,16 @@ public class PlayerShoot : MonoBehaviour {
 
     // Use this for initialization
 
-    public GameObject shot;
-    public Rigidbody2D shotBody;
+    public GameObject parent;
+    private Rigidbody2D shotBody;
 
 
-
+    // Creates the shootThing and decides which direction it will go, then makes it move
 	void Start () {
 
         int direction = -1;
+        shotBody.bodyType = RigidbodyType2D.Kinematic;
 
-        Instantiate(shot);
         GameObject Player = GameObject.Find("Player");
         CharacterController2D controller = Player.GetComponent<CharacterController2D>();
         if (controller.m_FacingRight)
@@ -30,4 +30,14 @@ public class PlayerShoot : MonoBehaviour {
 	void Update () {
 		
 	}
+
+    // Destroys the shootThing when it runs into a rigidbody
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag != "Player")
+        {
+            Destroy(this);
+            Destroy(parent);
+        }
+    }
 }
