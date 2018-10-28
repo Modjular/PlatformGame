@@ -6,6 +6,7 @@ public class ConstantSpeed : MonoBehaviour {
     [Header("Platform Attributes")]
     public string state; //named states on where the platform should move
     public float movementTime;
+    public float moveSpeed = 0.05f;
     // Use this for initialization
     void Start ()
     {
@@ -17,11 +18,11 @@ public class ConstantSpeed : MonoBehaviour {
     {
         if (state == "Move2")
         {
-            transform.Translate(0.1f, 0, 0);
+            transform.Translate(moveSpeed, 0, 0);
         }
         if (state == "Move1")
         {
-            transform.Translate(-0.1f, 0, 0);
+            transform.Translate(-moveSpeed, 0, 0);
         }
         transform.Rotate(0, 0, 0);
     }

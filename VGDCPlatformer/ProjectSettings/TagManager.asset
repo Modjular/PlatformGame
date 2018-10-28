@@ -9,6 +9,7 @@ TagManager:
   - floor
   - environment
   - checkPoint
+  - Bobbing
   layers:
   - Default
   - TransparentFX
