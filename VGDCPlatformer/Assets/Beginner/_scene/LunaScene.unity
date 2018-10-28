@@ -347,7 +347,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   state: 
   movementTime: 1
-  moveSpeed: 0.05
+  xMoveSpeed: 0.05
+  yMoveSpeed: 0.05
 --- !u!114 &510221344
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -676,7 +677,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   state: 
   movementTime: 1
-  moveSpeed: 0.05
+  xMoveSpeed: 0.05
+  yMoveSpeed: 0.05
 --- !u!114 &901204623
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -901,7 +903,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   state: 
   movementTime: 1
-  moveSpeed: 0.05
+  xMoveSpeed: 0.05
+  yMoveSpeed: 0.05
 --- !u!1 &1545222692 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1143225420547540, guid: c7bb05fc9eff6f24294f5448f5afc624,
@@ -913,14 +916,15 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1545222692}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 823ecf55fa683f64e801255bd2c9be11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   state: 
-  movementTime: 1
-  moveSpeed: 0.05
+  movementTime: 0.5
+  xMoveSpeed: 0.1
+  yMoveSpeed: 0.05
 --- !u!1001 &1711032978
 Prefab:
   m_ObjectHideFlags: 0
