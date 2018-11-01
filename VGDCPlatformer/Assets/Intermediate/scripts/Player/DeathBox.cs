@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // In order to use this, you'll need to attach this and a BoxCollider2D Component
+// 
 
 public class DeathBox : MonoBehaviour {
 	public void OnCollisionEnter2D(Collision2D collision)

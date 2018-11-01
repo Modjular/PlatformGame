@@ -5,7 +5,6 @@ using UnityEngine;
 public static class GameManager{
 
     public static Transform spawnPoint;
-    public static int startLives;
 
 	public static void UpdateSpawn(Transform checkPoint)
     {
