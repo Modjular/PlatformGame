@@ -9,6 +9,7 @@ public class PlayerMove : MonoBehaviour {
     bool jump = false;
     bool pounce = false;
     public CharacterController2D controller;
+    public GameObject projectile;
 
     void Start()
     {
@@ -37,11 +38,16 @@ public class PlayerMove : MonoBehaviour {
     private void shoot()
     {
         //Rigidbody snowball = (Rigidbody)Instantiate(snowball, Player.Transform.position.x);
-
-        GameObject cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
-        cube.AddComponent<Rigidbody>();
+        GameObject cube = Instantiate(projectile, transform.position, Quaternion.identity) as GameObject;
+        //GameObject cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
+        //GameObject cube = new GameObject("snowball");
+        //cube.AddComponent<Rigidbody>();
         //cube.transform.position = new Vector2(1, 2);
-        cube.GetComponent<Rigidbody2D>().velocity = new Vector2(50, 0);
+        //fast = cube.GetComponent<Rigidbody2D>();
+        //fast.velocity = new Vector2(500, 0);
+        cube.GetComponent<Rigidbody2D>().velocity = new Vector2(10, 0);
+        //cube.GetComponent<Rigidbody2D>().AddForce(transform.forward * 30);
+        
     }
 
     private void FixedUpdate()
