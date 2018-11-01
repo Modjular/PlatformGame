@@ -8,6 +8,7 @@ public class PlayerHealth : MonoBehaviour {
 	// Tony's test change
 	public int startHealth = 1; //the amount of health the player is suppose to start with
 	public int health; //the amount of health the player has, at 0 player dies
+    public int lives = 3; //Later this should reference a global
 	//public float playerSpawnX = -17.3f; //where the player spawns at start or death, X coord
 	//public float playerSpawnY = -1.9f; //where the player spawns at start or death, Y coord
 
@@ -48,8 +49,15 @@ public class PlayerHealth : MonoBehaviour {
 		//player dies here
 		if (health <= 0)
 		{
-            //restarts level
-            SceneManager.LoadScene("SampleScene");
+            if(lives == 0){
+                //restarts level
+                Debug.Log("OUT OF LIVES! --- GAME OVER ---\n RESTARTING...");
+                SceneManager.LoadScene("SampleScene");
+            }else{
+                lives--;
+                health = startHealth;
+                transform.position = SpawnPoint.transform.position;
+            }
             
 		}
 	}
