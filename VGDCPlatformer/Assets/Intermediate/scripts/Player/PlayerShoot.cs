@@ -22,6 +22,7 @@ public class PlayerShoot : MonoBehaviour {
             direction = 1;
         shotBody = GetComponent<Rigidbody2D>();
         shotBody.velocity = new Vector2(50 * direction, 0);
+        shotBody.transform.position = new Vector2(Player.transform.position.x, Player.transform.position.y);
 
 
 	}
