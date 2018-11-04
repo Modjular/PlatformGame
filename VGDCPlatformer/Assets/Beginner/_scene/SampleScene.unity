@@ -23958,7 +23958,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   state: 
   movementTime: 5.5
-  moveSpeed: 0.05
+  xMoveSpeed: 0.05
+  yMoveSpeed: 0.05
 --- !u!1001 &1476424626
 Prefab:
   m_ObjectHideFlags: 0
@@ -24281,6 +24282,50 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1621370096760718, guid: fcb30cc1fc1d3e048bea4c8f19f8f82d,
     type: 2}
   m_PrefabInternal: {fileID: 281548365}
+--- !u!114 &1620015540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1620015539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33675c1202d8fea4baceccf7d0d3b6be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_JumpForce: 700
+  m_AirJumps: 0
+  m_DefaultPounceCharge: 0
+  m_PounceCharge: 0
+  m_FallGravity: 4
+  m_DefaultFallGravity: 4
+  m_MovementSmoothing: 0.05
+  m_GroundLayer:
+    serializedVersion: 2
+    m_Bits: 256
+  m_GroundCheck: {fileID: 1940512210}
+  m_HorizontalCheck: {fileID: 0}
+  m_AirControl: 0
+  m_RigidBody2D: {fileID: 0}
+  m_SpriteRenderer: {fileID: 0}
+  m_FacingRight: 1
+  m_Damaged: 0
+  m_Immune: 0
+  m_AirJumpsLeft: 0
+--- !u!114 &1620015541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1620015539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f217c403e0d4d540a9af7233629e721, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  runSpeed: 0
+  controller: {fileID: 1620015540}
+  projectile: {fileID: 0}
 --- !u!114 &1620015545
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24294,6 +24339,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startHealth: 10
   health: 1
+  lives: 3
   SpawnPoint: {fileID: 1732267319}
 --- !u!1 &1680232996
 GameObject:
@@ -26115,6 +26161,11 @@ Transform:
   m_Father: {fileID: 866828145}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1940512210 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4388786336313720, guid: fcb30cc1fc1d3e048bea4c8f19f8f82d,
+    type: 2}
+  m_PrefabInternal: {fileID: 281548365}
 --- !u!1001 &1952106295
 Prefab:
   m_ObjectHideFlags: 0
