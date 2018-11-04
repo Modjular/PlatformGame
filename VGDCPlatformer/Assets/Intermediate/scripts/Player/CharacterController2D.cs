@@ -21,7 +21,7 @@ public class CharacterController2D : MonoBehaviour
     [HideInInspector] public Rigidbody2D m_RigidBody2D;
     [HideInInspector] public SpriteRenderer m_SpriteRenderer;
     private bool m_Grounded;
-    private bool m_NotPounced;
+    public bool m_NotPounced;
     private bool m_Charged;
     public bool m_FacingRight = true;
     private bool m_OnJumpPad = false;
