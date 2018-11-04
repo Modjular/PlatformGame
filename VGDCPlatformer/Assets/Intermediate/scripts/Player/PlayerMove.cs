@@ -28,27 +28,27 @@ public class PlayerMove : MonoBehaviour {
         {
             pounce = true;
         }
-        if (Input.GetButtonDown("Fire3"))
-        {
-            shoot(); 
-        }
+        //if (Input.GetButtonDown("Fire3"))
+        //{
+        //    shoot(); 
+        //}
     }
 
     //Instansiates the snowball to be shot
-    private void shoot()
-    {
-        //Rigidbody snowball = (Rigidbody)Instantiate(snowball, Player.Transform.position.x);
-        GameObject cube = Instantiate(projectile, transform.position, Quaternion.identity) as GameObject;
-        //GameObject cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
-        //GameObject cube = new GameObject("snowball");
-        //cube.AddComponent<Rigidbody>();
-        //cube.transform.position = new Vector2(1, 2);
-        //fast = cube.GetComponent<Rigidbody2D>();
-        //fast.velocity = new Vector2(500, 0);
-        cube.GetComponent<Rigidbody2D>().velocity = new Vector2(10, 0);
-        //cube.GetComponent<Rigidbody2D>().AddForce(transform.forward * 30);
+    //private void shoot()
+    //{
+    //    //Rigidbody snowball = (Rigidbody)Instantiate(snowball, Player.Transform.position.x);
+    //    GameObject cube = Instantiate(projectile, transform.position, Quaternion.identity) as GameObject;
+    //    //GameObject cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
+    //    //GameObject cube = new GameObject("snowball");
+    //    //cube.AddComponent<Rigidbody>();
+    //    //cube.transform.position = new Vector2(1, 2);
+    //    //fast = cube.GetComponent<Rigidbody2D>();
+    //    //fast.velocity = new Vector2(500, 0);
+    //    cube.GetComponent<Rigidbody2D>().velocity = new Vector2(10, 0);
+    //    //cube.GetComponent<Rigidbody2D>().AddForce(transform.forward * 30);
         
-    }
+    //}
 
     private void FixedUpdate()
     {

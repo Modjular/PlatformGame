@@ -19,6 +19,7 @@ public class CharacterController2D : MonoBehaviour
 
 
     [HideInInspector] public Rigidbody2D m_RigidBody2D;
+    [HideInInspector] public SpriteRenderer m_SpriteRenderer;
     private bool m_Grounded;
     private bool m_NotPounced;
     private bool m_Charged;
@@ -34,6 +35,7 @@ public class CharacterController2D : MonoBehaviour
     {
 
         m_RigidBody2D = GetComponent<Rigidbody2D>();
+        m_SpriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     void FixedUpdate()
@@ -45,6 +47,8 @@ public class CharacterController2D : MonoBehaviour
             m_AirJumpsLeft = m_AirJumps;
             m_NotPounced = true;
             m_PounceCharge = 0;
+            Color m_NewColor = new Color(0, 0, 0);
+            m_SpriteRenderer.color = m_NewColor;
         }
     }
 
@@ -88,7 +92,9 @@ public class CharacterController2D : MonoBehaviour
         {
             m_Charged = true;
             m_PounceCharge += -0.2f;
-            m_FallGravity -= 0.5f;
+            m_FallGravity *= 0.5f;
+            Color m_NewColor = new Color(-1f*m_PounceCharge, 0, 0);
+            m_SpriteRenderer.color = m_NewColor;
 
         }
         else if (!jump && (pounce != true) && m_NotPounced && m_Charged)
