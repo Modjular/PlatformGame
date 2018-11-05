@@ -1,8 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class StopBobbing : MonoBehaviour 
+//assign this to some trigger
+public class StopBobbingTrigger : MonoBehaviour 
 {
 
     void Start()

@@ -41,6 +41,7 @@ public class CharacterController2D : MonoBehaviour
     void FixedUpdate()
     {
         m_Grounded = Physics2D.Linecast(transform.position, m_GroundCheck.position, m_GroundLayer);
+        Debug.DrawLine(transform.position, m_GroundCheck.position, Color.yellow);
         if (m_Grounded)
         {
             JumpadOff();
