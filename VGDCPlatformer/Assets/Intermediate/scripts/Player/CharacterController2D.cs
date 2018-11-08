@@ -56,7 +56,7 @@ public class CharacterController2D : MonoBehaviour
     public void Move(float move, bool jump, bool pounce)
     {
 
-        print(pounce);
+        //print(pounce);
         if (m_Grounded || m_AirControl)
         {
             Vector3 targetVelocity = new Vector2(move * 10f, m_RigidBody2D.velocity.y);

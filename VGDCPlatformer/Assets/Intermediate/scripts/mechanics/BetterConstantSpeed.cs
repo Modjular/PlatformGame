@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//note: you will need two siblings with changeplatformdirection script and triggers in order to make this work
+//DONT USE: USE MOVINGPLATFORM INSTEAD
 public class BetterConstantSpeed : MonoBehaviour 
 {
     Rigidbody2D rb;
@@ -10,18 +10,30 @@ public class BetterConstantSpeed : MonoBehaviour
     public int neg = 1;
     void Start()
     {
+        rb = GetComponent<Rigidbody2D>();
     }
 
     void Update()
     {
-        transform.Translate(neg * xMoveSpeed, neg * yMoveSpeed,0);
+        //transform.Translate(neg * xMoveSpeed, neg * yMoveSpeed,0);
+    }
+
+    void FixedUpdate()
+    {
+        rb.velocity = new Vector2(neg * xMoveSpeed, neg * yMoveSpeed);
     }
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
         collision.collider.transform.SetParent(transform);
+        collision.collider.attachedRigidbody.velocity = new Vector2(neg * xMoveSpeed, neg * yMoveSpeed);
     }
 
+    public void OnCollisionStay2D(Collision2D collision)
+    {
+        collision.collider.transform.SetParent(transform);
+        collision.collider.attachedRigidbody.velocity = new Vector2(neg * xMoveSpeed, neg * yMoveSpeed);
+    }
 
     public void OnCollisionExit2D(Collision2D collision)
     {

@@ -1,9 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//note: you will need two siblings with stopbobbing script and triggers in order to create bobbing effect
+//note: you will need two siblings with stopbobbing script and triggers in order to create bobbing effect, also bobbing tag on platform
 public class Bobbing : MonoBehaviour 
 {
+    //assign to object w/ rigid body
     Rigidbody2D rb;
     private bool onPlatform;
     void Start()

@@ -1,9 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+// DONT USE; USE MOVINGPLATFORM INSTEAD
 public class ConstantSpeed : MonoBehaviour {
-    //assign to parent platform
+    //assign to parent object w/ child platform
     [Header("Platform Attributes")]
     public string state; //named states on where the platform should move
     public float movementTime;

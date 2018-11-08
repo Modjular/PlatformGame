@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DivebombDestructable : MonoBehaviour 
 {
-    //assign to object w/ rigidbody
+    //assign to object w/ rigidbody and make a trigger slightly above the platform
     public float DestructThreshold;
     public bool Destroyed;
 
