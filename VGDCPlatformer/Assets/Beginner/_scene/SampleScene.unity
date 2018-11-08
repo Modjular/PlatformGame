@@ -202,7 +202,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4349138187672714, guid: e9b8411a2b8469b4196090088beb9c16, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -0.6046044
+      value: -0.6046048
       objectReference: {fileID: 0}
     - target: {fileID: 4349138187672714, guid: e9b8411a2b8469b4196090088beb9c16, type: 2}
       propertyPath: m_LocalPosition.y
@@ -23530,6 +23530,11 @@ Prefab:
       propertyPath: m_JumpForce
       value: 500
       objectReference: {fileID: 0}
+    - target: {fileID: 114842849280027526, guid: ca245e6841e277446968158966a723a1,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca245e6841e277446968158966a723a1, type: 2}
   m_IsPrefabAsset: 0
@@ -23625,7 +23630,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1375258569}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.6046044, y: 0.94274086, z: -9.888672}
+  m_LocalPosition: {x: -0.6046048, y: 0.94274086, z: -9.888672}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 290949427}
@@ -24308,6 +24313,7 @@ MonoBehaviour:
   m_AirControl: 0
   m_RigidBody2D: {fileID: 0}
   m_SpriteRenderer: {fileID: 0}
+  m_NotPounced: 0
   m_FacingRight: 1
   m_Damaged: 0
   m_Immune: 0
@@ -24340,7 +24346,9 @@ MonoBehaviour:
   startHealth: 10
   health: 1
   lives: 3
+  script: {fileID: 0}
   SpawnPoint: {fileID: 1732267319}
+  parent: {fileID: 0}
 --- !u!1 &1680232996
 GameObject:
   m_ObjectHideFlags: 0
