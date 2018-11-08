@@ -32,7 +32,8 @@ public class MovingPlatform : MonoBehaviour
     void FixedUpdate()
     {
         //update the movement of the platform
-        movingPlatform.position = Vector3.Lerp(movingPlatform.position, newPosition, platformVelocity * Time.deltaTime);
+        Debug.Log(Time.deltaTime);
+        movingPlatform.position = Vector3.MoveTowards(movingPlatform.position, newPosition, platformVelocity * Time.deltaTime);
     }
 
     void ChangeTarget()

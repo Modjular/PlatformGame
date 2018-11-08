@@ -11,6 +11,7 @@ public class StopBobbingTrigger : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
+        //if a platform w/ bobbing pass enters trigger
         if (collision.gameObject.CompareTag("Bobbing"))
         {
             Debug.Log("entered trigger");
