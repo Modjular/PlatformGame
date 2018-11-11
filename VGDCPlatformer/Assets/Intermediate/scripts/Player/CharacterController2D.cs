@@ -41,6 +41,7 @@ public class CharacterController2D : MonoBehaviour
     void FixedUpdate()
     {
         m_Grounded = Physics2D.Linecast(transform.position, m_GroundCheck.position, m_GroundLayer);
+        Debug.DrawLine(transform.position, m_GroundCheck.position, Color.yellow);
         if (m_Grounded)
         {
             JumpadOff();
@@ -55,7 +56,7 @@ public class CharacterController2D : MonoBehaviour
     public void Move(float move, bool jump, bool pounce)
     {
 
-        print(pounce);
+        //print(pounce);
         if (m_Grounded || m_AirControl)
         {
             Vector3 targetVelocity = new Vector2(move * 10f, m_RigidBody2D.velocity.y);
@@ -101,6 +102,7 @@ public class CharacterController2D : MonoBehaviour
         {
             m_RigidBody2D.AddForce(new Vector2(m_RigidBody2D.velocity.x, m_PounceCharge * m_JumpForce));
             m_NotPounced = false;
+
             m_Charged = false;
             m_PounceCharge = m_DefaultPounceCharge;
             m_FallGravity = m_DefaultFallGravity;
@@ -112,7 +114,6 @@ public class CharacterController2D : MonoBehaviour
 
         if (jump && m_AirJumpsLeft >= 1)
         {
-
             m_RigidBody2D.velocity = new Vector2(m_RigidBody2D.velocity.x, 0);
         }
 

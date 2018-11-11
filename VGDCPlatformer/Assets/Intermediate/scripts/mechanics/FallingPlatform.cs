@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class FallingPlatform : MonoBehaviour
 {
+    //assign to object w/ rigid body
     //initializing variable for rigidbody
     Rigidbody2D rb;
 

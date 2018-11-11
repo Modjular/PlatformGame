@@ -1,22 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+// DONT USE; USE MOVINGPLATFORM INSTEAD
 public class ConstantSpeed : MonoBehaviour {
+    //assign to parent object w/ child platform
     [Header("Platform Attributes")]
     public string state; //named states on where the platform should move
     public float movementTime;
     public float xMoveSpeed = 0.05f;
     public float yMoveSpeed = 0.05f;
-    // Use this for initialization
     void Start ()
     {
         ChangeTarget();
 	}
 	
-	// Update is called once per frame
 	void Update ()
     {
+        //states affect what direction platform moves
         if (state == "Move2")
         {
             transform.Translate(xMoveSpeed, yMoveSpeed, 0);
@@ -49,4 +49,3 @@ public class ConstantSpeed : MonoBehaviour {
         Invoke("ChangeTarget", movementTime);
     }
 }
-
