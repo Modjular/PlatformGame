@@ -66,7 +66,7 @@ public class PlayerHealth : MonoBehaviour {
             if(lives == 0){
                 //restarts level
                 Debug.Log("OUT OF LIVES! --- GAME OVER ---\n RESTARTING...");
-                SceneManager.LoadScene("SampleScene");
+                SceneManager.LoadScene("AlexScene");
             }else{
                 lives--;
                 health = startHealth;
