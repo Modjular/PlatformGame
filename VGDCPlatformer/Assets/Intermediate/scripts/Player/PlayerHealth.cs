@@ -16,8 +16,7 @@ public class PlayerHealth : MonoBehaviour {
 
     public Transform SpawnPoint;
     public GameObject parent;
-
-
+    public PlayerLivesCounter LivesCounterScript;
     //Use this for initialization
     void Start () {
 		health = startHealth;
@@ -28,7 +27,7 @@ public class PlayerHealth : MonoBehaviour {
         GameObject Player = transform.parent.gameObject;
         print(Player);
         CharacterController2D script = GetComponent<CharacterController2D>();
-        
+        LivesCounterScript = GameObject.Find("LivesCounter").GetComponent<PlayerLivesCounter>();
 
     }
 	
@@ -71,6 +70,7 @@ public class PlayerHealth : MonoBehaviour {
                 lives--;
                 health = startHealth;
                 transform.position = SpawnPoint.transform.position;
+                LivesCounterScript.LivesUpdate();
             }
             
 		}
