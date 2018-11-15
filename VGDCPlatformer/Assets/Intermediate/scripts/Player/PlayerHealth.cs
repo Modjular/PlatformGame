@@ -35,27 +35,26 @@ public class PlayerHealth : MonoBehaviour {
 	//will occur when player interacts with Enemy object
 	void OnTriggerEnter2D (Collider2D collide)
 	{
-		if (collide.gameObject.tag == "hurtbox")
-		{
-			//to kill enemy, we tell the enemy script
-			TheEnemy script = collide.gameObject.GetComponentInParent<TheEnemy>();
-			script.Die();
-		}
-        //Checks if the object is the players hitbox and the player is not pouncing
-
         CharacterController2D scriptP = gameObject.GetComponent<CharacterController2D>();
-        
+        switch(collide.gameObject.tag){
 
-		if (collide.gameObject.tag == "hitbox" && scriptP.m_NotPounced)
-		{
-            
-            health -=100; //player takes damage
-		}
-
-        if(collide.gameObject.tag == "checkPoint")
-        {
-            SpawnPoint = collide.transform;
-            GameManager.UpdateSpawn(collide.transform);
+            case "hurtbox":
+            {
+                //to kill enemy, we tell the enemy script
+                TheEnemy script = collide.gameObject.GetComponentInParent<TheEnemy>();
+                script.Die();
+            };break;
+        //Checks if the object is the players hitbox and the player is not pouncing
+            case "hitbox" :
+            {
+                if(scriptP.m_NotPounced)
+                    health -=100; //player takes damage
+            };break;//scriptP.m_NotPounced
+            case "checkPoint":
+             {
+                SpawnPoint = collide.transform;
+                GameManager.UpdateSpawn(collide.transform);
+            };break;
         }
 	}
 
