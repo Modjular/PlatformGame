@@ -146,7 +146,24 @@ public class CharacterController2D : MonoBehaviour
         {
             m_RigidBody2D.velocity = new Vector2(m_RigidBody2D.velocity.x, 25);
         }
+        if(collide.gameObject.tag == "ladder")
+        {
+            m_Grounded = false;
+        }
 
+    }
+
+    void OnTriggerStay2D(Collider2D collide)
+    {
+        if(collide.gameObject.tag == "ladder")
+        {
+
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D collide)
+    {
+        
     }
 
 
