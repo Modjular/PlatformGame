@@ -12,7 +12,7 @@ public class PlayerHealth : MonoBehaviour {
                           //public float playerSpawnX = -17.3f; //where the player spawns at start or death, X coord
                           //public float playerSpawnY = -1.9f; //where the player spawns at start or death, Y coord
 
-    public CharacterController2D script;
+    public CharacterController2D scriptP;
 
     public Transform SpawnPoint;
     public GameObject parent;
@@ -26,7 +26,7 @@ public class PlayerHealth : MonoBehaviour {
         //GameObject Player = GameObject.Find("Player");
         GameObject Player = transform.parent.gameObject;
         print(Player);
-        CharacterController2D script = GetComponent<CharacterController2D>();
+        CharacterController2D scriptP = GetComponent<CharacterController2D>();
         LivesCounterScript = GameObject.Find("LivesCounter").GetComponent<PlayerLivesCounter>();
 
     }
@@ -43,8 +43,12 @@ public class PlayerHealth : MonoBehaviour {
 		}
         //Checks if the object is the players hitbox and the player is not pouncing
 
-		if (collide.gameObject.tag == "hitbox" && script.m_NotPounced)
+        CharacterController2D scriptP = gameObject.GetComponent<CharacterController2D>();
+        
+
+		if (collide.gameObject.tag == "hitbox" && scriptP.m_NotPounced)
 		{
+            
             health -=100; //player takes damage
 		}
 
