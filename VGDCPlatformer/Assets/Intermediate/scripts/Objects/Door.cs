@@ -13,7 +13,7 @@ public class Door : ScriptableObject {
 
 
 	//Called when a new instance is created
-	void OnEnable
+	OnEnable
 	{
 		private Rigidbody2D barrier;
 		barrier.bodyType = RigidbodyType2D.Static;

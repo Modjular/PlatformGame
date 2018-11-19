@@ -12,7 +12,7 @@ public class Switch : ScriptableObject {
 	public int number = 1;
 
 	// Called when a new instance is created
-	public void OnEnable
+	OnEnable
 	{
 		doorName += (string)number;
 		selfName += (string)number;
