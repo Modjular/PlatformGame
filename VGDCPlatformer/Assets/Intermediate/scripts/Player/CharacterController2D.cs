@@ -74,7 +74,7 @@ public class CharacterController2D : MonoBehaviour
 
         }
 
-        JumpGravity(jump);
+        JumpGravity(jump, pounce);
 
         if (m_Grounded && jump)
         {
@@ -83,24 +83,24 @@ public class CharacterController2D : MonoBehaviour
         }
 
         //air Jump
-        else if (jump && m_AirJumpsLeft > 0)
+        if (jump && m_AirJumpsLeft > 0)
         {
             m_Grounded = false;
             m_RigidBody2D.AddForce(new Vector2(0f, m_JumpForce));
             m_AirJumpsLeft--;
         }
-        else if (!jump && pounce && m_NotPounced)
+        if (pounce && m_NotPounced)
         {
             m_Charged = true;
             m_PounceCharge += -0.2f;
             m_FallGravity *= 0.5f;
-            Color m_NewColor = new Color(-1f*m_PounceCharge, 0, 0);
+            Color m_NewColor = new Color(-1f * m_PounceCharge, 0, 0);
             m_SpriteRenderer.color = m_NewColor;
 
         }
-        else if (!jump && (pounce != true) && m_NotPounced && m_Charged)
+        if (((pounce != true) && m_NotPounced && m_Charged) || (m_PounceCharge < -1f))
         {
-            m_RigidBody2D.AddForce(new Vector2(m_RigidBody2D.velocity.x, m_PounceCharge * m_JumpForce));
+            m_RigidBody2D.AddForce(new Vector2(m_RigidBody2D.velocity.x, m_PounceCharge * m_JumpForce - m_JumpForce));
             m_NotPounced = false;
 
             m_Charged = false;
@@ -109,25 +109,27 @@ public class CharacterController2D : MonoBehaviour
         }
     }
 
-    void JumpGravity(bool jump)
+    void JumpGravity(bool jump, bool pounce)
     {
+        if (!pounce)
+        {
+            if (jump && m_AirJumpsLeft >= 1)
+            {
+                m_RigidBody2D.velocity = new Vector2(m_RigidBody2D.velocity.x, 0);
+            }
 
-        if (jump && m_AirJumpsLeft >= 1)
-        {
-            m_RigidBody2D.velocity = new Vector2(m_RigidBody2D.velocity.x, 0);
-        }
-
-        if (m_RigidBody2D.velocity.y < 0) //we are falling
-        {
-            m_RigidBody2D.velocity += Vector2.up * Physics2D.gravity.y * (m_FallGravity - 1) * Time.deltaTime;
-        }
-        else if ((m_RigidBody2D.velocity.y > 0 || m_OnJumpPad) && !Input.GetButton("Fire1"))//tab jump
-        {
-            m_RigidBody2D.velocity += Vector2.up * Physics2D.gravity.y * (m_FallGravity - 1) * Time.deltaTime;
-        }
-        else if ((m_RigidBody2D.velocity.y > 0 || m_OnJumpPad) && Input.GetButton("Fire1") && m_OnJumpPad)
-        {
-            m_RigidBody2D.velocity += Vector2.up * Physics2D.gravity.y * (m_FallGravity - 1) * Time.deltaTime;
+            if (m_RigidBody2D.velocity.y < 0) //we are falling
+            {
+                m_RigidBody2D.velocity += Vector2.up * Physics2D.gravity.y * (m_FallGravity - 1) * Time.deltaTime;
+            }
+            else if ((m_RigidBody2D.velocity.y > 0 || m_OnJumpPad) && !Input.GetButton("Fire1"))//tab jump
+            {
+                m_RigidBody2D.velocity += Vector2.up * Physics2D.gravity.y * (m_FallGravity - 1) * Time.deltaTime;
+            }
+            else if ((m_RigidBody2D.velocity.y > 0 || m_OnJumpPad) && Input.GetButton("Fire1") && m_OnJumpPad)
+            {
+                m_RigidBody2D.velocity += Vector2.up * Physics2D.gravity.y * (m_FallGravity - 1) * Time.deltaTime;
+            }
         }
     }
 
@@ -146,7 +148,7 @@ public class CharacterController2D : MonoBehaviour
         {
             m_RigidBody2D.velocity = new Vector2(m_RigidBody2D.velocity.x, 25);
         }
-        if(collide.gameObject.tag == "ladder")
+        if (collide.gameObject.tag == "ladder")
         {
             m_Grounded = false;
         }
@@ -155,7 +157,7 @@ public class CharacterController2D : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D collide)
     {
-        if(collide.gameObject.tag == "ladder")
+        if (collide.gameObject.tag == "ladder")
         {
 
         }
@@ -163,7 +165,7 @@ public class CharacterController2D : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D collide)
     {
-        
+
     }
 
 
