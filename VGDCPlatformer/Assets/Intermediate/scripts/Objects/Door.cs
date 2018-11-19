@@ -8,20 +8,19 @@ public class Door : ScriptableObject {
 	public GameObject Button;
 	public Boolean open = false;
 	public Color selfColor = Color.Grey;
-	public string Name = "Door";
+	public string selfName = "Door";
 	public int number = 1;
 
 
 	//Called when a new instance is created
 	void OnEnable
 	{
-
 		private Rigidbody2D barrier;
 		barrier.bodyType = RigidbodyType2D.Static;
 
-		buttonName += number;
+		buttonName += (string)number;
+		selfName += (string)number;
 		Button = GameObject.find.(buttonName);
 		number++;
-
 	}
 }

@@ -8,16 +8,15 @@ public class Switch : ScriptableObject {
 	public GameObject Door;
 	public Boolean pressed = false;
 	public Color selfColor = Color.Red;
-	public string Name = "Switch";
+	public string selfName = "Button";
 	public int number = 1;
 
 	// Called when a new instance is created
 	public void OnEnable
 	{
-
-		doorName += number;
+		doorName += (string)number;
+		selfName += (string)number;
 		Door = GameObject.find.(doorName);
 		number++;
-
 	}
 }
