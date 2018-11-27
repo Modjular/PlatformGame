@@ -32,7 +32,6 @@ public class MovingPlatform : MonoBehaviour
     void FixedUpdate()
     {
         //update the movement of the platform
-        Debug.Log(Time.deltaTime);
         movingPlatform.position = Vector3.MoveTowards(movingPlatform.position, newPosition, platformVelocity * Time.deltaTime);
     }
 

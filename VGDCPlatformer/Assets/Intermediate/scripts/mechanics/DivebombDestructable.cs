@@ -10,6 +10,7 @@ public class DivebombDestructable : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
+        //if player's velocity is greather than the threshold, allow platform to be destroyed
         if (collision.gameObject.tag == ("Player") & collision.GetComponent<Collider2D>().attachedRigidbody.velocity.y <= -DestructThreshold)
         {
             Destroyed = true;
@@ -20,6 +21,7 @@ public class DivebombDestructable : MonoBehaviour
     {
         if (collision.gameObject.tag == ("Player") & Destroyed)
         {
+            //if destroyed true, destroy on touch
             Debug.Log("Destroy");
             Destroy(gameObject, 0);
         }
