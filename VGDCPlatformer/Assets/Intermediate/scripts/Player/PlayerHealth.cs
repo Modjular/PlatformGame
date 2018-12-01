@@ -17,6 +17,7 @@ public class PlayerHealth : MonoBehaviour {
     public Transform SpawnPoint;
     public GameObject parent;
     public PlayerLivesCounter LivesCounterScript;
+    public Scene lastScene;
     //Use this for initialization
     void Start () {
 		health = startHealth;
@@ -68,7 +69,8 @@ public class PlayerHealth : MonoBehaviour {
             if(lives == 0){
                 //restarts level
                 Debug.Log("OUT OF LIVES! --- GAME OVER ---\n RESTARTING...");
-                SceneManager.LoadScene("AlexScene");
+                lastScene = SceneManager.GetActiveScene();
+                SceneManager.LoadScene("GameOverScene");
             }else{
                 lives--;
                 health = startHealth;
