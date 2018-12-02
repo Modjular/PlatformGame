@@ -7,7 +7,7 @@ public class GameOverButton : MonoBehaviour
 
 	public void RestartGame()
 	{
-		UnityEngine.SceneManagement.SceneManager.LoadScene();
+		//UnityEngine.SceneManagement.SceneManager.LoadScene();
 	}
 
 }
