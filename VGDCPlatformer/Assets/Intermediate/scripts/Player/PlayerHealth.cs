@@ -17,6 +17,7 @@ public class PlayerHealth : MonoBehaviour {
     public Transform SpawnPoint;
     public GameObject parent;
     public PlayerLivesCounter LivesCounterScript;
+    public storeScene storeSceneScript;
     //Use this for initialization
     void Start () {
 		health = startHealth;
@@ -27,8 +28,11 @@ public class PlayerHealth : MonoBehaviour {
         GameObject Player = transform.parent.gameObject;
         print(Player);
         CharacterController2D scriptP = GetComponent<CharacterController2D>();
+        storeSceneScript = GameObject.Find("storeScene").GetComponent<storeScene>();
+        Debug.Log(GameObject.Find("storeScene").transform.name);
+        DontDestroyOnLoad(GameObject.Find("storeScene"));
         LivesCounterScript = GameObject.Find("LivesCounter").GetComponent<PlayerLivesCounter>();
-
+        
     }
 	
 	
@@ -68,7 +72,9 @@ public class PlayerHealth : MonoBehaviour {
             if(lives == 0){
                 //restarts level
                 Debug.Log("OUT OF LIVES! --- GAME OVER ---\n RESTARTING...");
-                SceneManager.LoadScene("AlexScene");
+                
+                storeSceneScript.GetGameOver();
+
             }else{
                 lives--;
                 health = startHealth;

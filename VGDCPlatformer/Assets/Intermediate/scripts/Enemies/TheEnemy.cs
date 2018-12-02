@@ -13,6 +13,11 @@ public class TheEnemy : MonoBehaviour {
 
     public GameObject parent;
 
+	public GameObject projectile;
+	private int time = 0;
+
+	
+
 	
 	// Update is called once per frame
 	void Update () {
@@ -34,6 +39,39 @@ public class TheEnemy : MonoBehaviour {
 			Flip();
 		}
 	}
+
+	void shoot()
+	{
+		GameObject spike = Instantiate(projectile, transform);
+		
+		//GameObject cube = Instantiate(projectile, transform.position, Quaternion.identity) as GameObject;
+        ////GameObject cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
+        //GameObject cube = new GameObject("snowball");
+        ////cube.AddComponent<Rigidbody>();
+        ////cube.transform.position = new Vector2(transform.position.x, transform.position.y);
+        //fast = cube.GetComponent<Rigidbody2D>();
+        //fast.velocity = new Vector2(-50, 0);
+
+		
+        ////cube.GetComponent<Rigidbody>().velocity = new Vector2(-20 * gameObject.transform.localScale.x, 0);
+		//Debug.Log("Facing value is: " + facing);
+		//Debug.Log("rotation value is:" + transform.rotation.y);
+        //cube.GetComponent<Rigidbody2D>().AddForce(transform.forward * 30);
+
+	}
+
+	void FixedUpdate()
+	{
+		time ++;
+		if(time==50)
+		{
+			time=0;
+			shoot();
+		}
+
+	}
+	
+
 
     //Destroys the GameObject
 	public void Die()

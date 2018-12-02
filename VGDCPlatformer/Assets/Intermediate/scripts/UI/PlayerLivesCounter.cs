@@ -14,6 +14,7 @@ public class PlayerLivesCounter : MonoBehaviour
 	{
 		//grabs variables from gameobject and componenets
 		player = GameObject.Find("Player(Beginner)");
+		Debug.Log("found player");
 		livesText = GetComponent<Text>();
 	}
 
@@ -33,6 +34,7 @@ public class PlayerLivesCounter : MonoBehaviour
 	public void LivesUpdate()
 	{
 		playerLives = player.GetComponent<PlayerHealth>().lives;
+		Debug.Log("lives updated");
 		livesText.text = "Lives:" +playerLives;
 	}
 	
