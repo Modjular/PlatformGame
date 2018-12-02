@@ -12,7 +12,6 @@ public class TheEnemy : MonoBehaviour {
     public Transform positionB;
 
     public GameObject parent;
-
 	public GameObject projectile;
 	private int time = 0;
 
@@ -42,7 +41,8 @@ public class TheEnemy : MonoBehaviour {
 
 	void shoot()
 	{
-		GameObject spike = Instantiate(projectile, transform);
+		GameObject spike =  Instantiate(projectile, transform);
+
 		
 		//GameObject cube = Instantiate(projectile, transform.position, Quaternion.identity) as GameObject;
         ////GameObject cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
