@@ -33,13 +33,11 @@ public class EnemyShoot : MonoBehaviour {
     // Destroys the shootThing when it runs into a rigidbody
     void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Collision detected");
         if (collision.gameObject.tag != "Enemy" && collision.gameObject.tag != "hitbox" && collision.gameObject.tag != "hurtbox")
         {
             Destroy(this);
-            Destroy(GameObject.Find ("bullet(Clone)"));
+            //Destroy(GameObject.Find ("bullet(Clone)"));
             Destroy(parent);
-            Debug.Log("This code is being ran");
         }
     }
 }
