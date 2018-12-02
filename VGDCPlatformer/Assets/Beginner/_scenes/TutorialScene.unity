@@ -30996,8 +30996,8 @@ Tilemap:
   m_TileSpriteArray:
   - m_RefCount: 5
     m_Data: {fileID: 21300096, guid: 10975936b78244c9aa6f2119f64df5dc, type: 3}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: 21300434, guid: 10975936b78244c9aa6f2119f64df5dc, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 21300004, guid: 10975936b78244c9aa6f2119f64df5dc, type: 3}
   - m_RefCount: 6
@@ -31562,9 +31562,11 @@ CompositeCollider2D:
         Y: 484327392
       - X: 318200000
         Y: 489627424
-      - X: 293800000
+      - X: 287800000
         Y: 489627424
-      - X: 293800000
+      - X: 287800000
+        Y: 483827392
+      - X: 288500000
         Y: 483527424
       - X: 317900000
         Y: 483527424
@@ -31721,8 +31723,9 @@ CompositeCollider2D:
       - {x: 37.22, y: 29.12274}
     - - {x: 31.82, y: 48.43274}
       - {x: 31.82, y: 48.96274}
-      - {x: 29.380001, y: 48.96274}
-      - {x: 29.380001, y: 48.35274}
+      - {x: 28.78, y: 48.96274}
+      - {x: 28.78, y: 48.38274}
+      - {x: 28.85, y: 48.35274}
       - {x: 31.79, y: 48.35274}
     - - {x: 30.02, y: 46.03274}
       - {x: 30.02, y: 46.56274}
@@ -32728,9 +32731,9 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 9a4bfd1d463a784498faaa4fa1d2f27c, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
