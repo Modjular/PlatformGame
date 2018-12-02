@@ -17,7 +17,7 @@ public class EnemyShoot : MonoBehaviour {
         //shotBody.bodyType = RigidbodyType2D.Kinematic;
         GameObject Snail = GameObject.Find("Enemy");
         TheEnemy controller = Snail.GetComponent<TheEnemy>();
-        direction = (int)Snail.transform.localScale.x;
+        direction = -(int)Snail.transform.localScale.x;
         shotBody = GetComponent<Rigidbody2D>();
         shotBody.velocity = new Vector2(10 * direction, 0);
         shotBody.transform.position = new Vector2(Snail.transform.position.x, Snail.transform.position.y);
@@ -31,10 +31,10 @@ public class EnemyShoot : MonoBehaviour {
 	}
 
     // Destroys the shootThing when it runs into a rigidbody
-    private void OnCollisionEnter2D(Collision2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log("Collision detected");
-        if (collision.gameObject.tag != "Enemy")
+        if (collision.gameObject.tag != "Enemy" && collision.gameObject.tag != "hitbox" && collision.gameObject.tag != "hurtbox")
         {
             Destroy(this);
             Destroy(GameObject.Find ("bullet(Clone)"));
