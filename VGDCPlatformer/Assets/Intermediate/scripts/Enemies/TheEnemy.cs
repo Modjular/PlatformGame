@@ -6,7 +6,7 @@ public class TheEnemy : MonoBehaviour {
 
 	public bool moveRight = false; //checks if the enemy moves right or left
 	public float movSpeed = 2.5f; //movement of the enemy
-	
+	public AudioClip deathSound;
     //Patrol Positions
     public Transform positionA;
     public Transform positionB;
@@ -76,6 +76,10 @@ public class TheEnemy : MonoBehaviour {
     //Destroys the GameObject
 	public void Die()
 	{
+		if (deathSound)
+		{
+			AudioSource.PlayClipAtPoint(deathSound, transform.position);
+		}
 		Destroy(parent);
 	}
 
