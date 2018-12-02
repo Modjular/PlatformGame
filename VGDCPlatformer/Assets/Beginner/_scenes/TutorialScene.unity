@@ -132,7 +132,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4349138187672714, guid: e9b8411a2b8469b4196090088beb9c16, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -0.60460466
+      value: -0.6046048
       objectReference: {fileID: 0}
     - target: {fileID: 4349138187672714, guid: e9b8411a2b8469b4196090088beb9c16, type: 2}
       propertyPath: m_LocalPosition.y
@@ -1107,7 +1107,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1375258569}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.60460466, y: 0.94274086, z: -9.888672}
+  m_LocalPosition: {x: -0.6046048, y: 0.94274086, z: -9.888672}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 290949427}
@@ -29071,7 +29071,7 @@ Tilemap:
   - first: {x: 49, y: 6, z: 0}
     second:
       m_TileIndex: 1
-      m_TileSpriteIndex: 1
+      m_TileSpriteIndex: 2
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_ObjectToInstantiate: {fileID: 0}
@@ -29164,10 +29164,10 @@ Tilemap:
   m_TileSpriteArray:
   - m_RefCount: 5
     m_Data: {fileID: 21300096, guid: 10975936b78244c9aa6f2119f64df5dc, type: 3}
-  - m_RefCount: 1
-    m_Data: {fileID: 21300004, guid: 10975936b78244c9aa6f2119f64df5dc, type: 3}
   - m_RefCount: 0
     m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: 21300004, guid: 10975936b78244c9aa6f2119f64df5dc, type: 3}
   - m_RefCount: 6
     m_Data: {fileID: 21300032, guid: 10975936b78244c9aa6f2119f64df5dc, type: 3}
   - m_RefCount: 1
@@ -30323,6 +30323,12 @@ Prefab:
       propertyPath: m_FlipX
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114064642236785644, guid: fc022bf348a77db4b867effe5b70299d,
+        type: 2}
+      propertyPath: projectile
+      value: 
+      objectReference: {fileID: 1251496196258756, guid: 862db75937daad046b1888429fab1fd7,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc022bf348a77db4b867effe5b70299d, type: 2}
   m_IsPrefabAsset: 0
@@ -30378,6 +30384,12 @@ Prefab:
       propertyPath: m_FlipX
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114064642236785644, guid: fc022bf348a77db4b867effe5b70299d,
+        type: 2}
+      propertyPath: projectile
+      value: 
+      objectReference: {fileID: 1251496196258756, guid: 862db75937daad046b1888429fab1fd7,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc022bf348a77db4b867effe5b70299d, type: 2}
   m_IsPrefabAsset: 0

@@ -12,15 +12,14 @@ public class EnemyShoot : MonoBehaviour {
 
     // Creates the shootThing and decides which direction it will go, then makes it move
 	void Start () {
-
+        
         int direction = -1;
-        shotBody.bodyType = RigidbodyType2D.Kinematic;
-
-        GameObject Snail = GameObject.Find("Snail");
+        //shotBody.bodyType = RigidbodyType2D.Kinematic;
+        GameObject Snail = GameObject.Find("Enemy");
         TheEnemy controller = Snail.GetComponent<TheEnemy>();
-        direction = 1;
+        direction = (int)Snail.transform.localScale.x;
         shotBody = GetComponent<Rigidbody2D>();
-        shotBody.velocity = new Vector2(50 * direction, 0);
+        shotBody.velocity = new Vector2(20 * direction, 0);
         shotBody.transform.position = new Vector2(Snail.transform.position.x, Snail.transform.position.y);
 	}
 	
@@ -36,6 +35,7 @@ public class EnemyShoot : MonoBehaviour {
         {
             Destroy(this);
             Destroy(parent);
+            //Debug.Log("This code is being ran");
         }
     }
 }
