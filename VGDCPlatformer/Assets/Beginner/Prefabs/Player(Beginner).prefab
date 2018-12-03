@@ -39,10 +39,10 @@ GameObject:
   - component: {fileID: 58527045640804220}
   - component: {fileID: 50397854182239366}
   - component: {fileID: 114934438150059644}
-  - component: {fileID: 95551070346853548}
   - component: {fileID: 114554463299026384}
   - component: {fileID: 114677478620741796}
   - component: {fileID: 114474692596640326}
+  - component: {fileID: 95378470194698198}
   m_Layer: 0
   m_Name: Player(Beginner)
   m_TagString: Player
@@ -137,7 +137,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 0.6}
   m_EdgeRadius: 0
---- !u!95 &95551070346853548
+--- !u!95 &95378470194698198
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 1
@@ -216,7 +216,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f217c403e0d4d540a9af7233629e721, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  runSpeed: 60
+  runSpeed: 80
   controller: {fileID: 114474692596640326}
   projectile: {fileID: 0}
 --- !u!114 &114934438150059644
