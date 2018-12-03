@@ -53,7 +53,7 @@ GameObject:
   - component: {fileID: 4390481072422022}
   - component: {fileID: 95195131770945242}
   m_Layer: 0
-  m_Name: SnailEnemy
+  m_Name: Shooter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

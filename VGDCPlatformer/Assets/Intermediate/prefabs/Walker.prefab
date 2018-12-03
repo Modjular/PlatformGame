@@ -85,7 +85,7 @@ GameObject:
   - component: {fileID: 4235796467502064}
   - component: {fileID: 95121793025366464}
   m_Layer: 0
-  m_Name: SnailEnemy 1
+  m_Name: Walker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -299,13 +299,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveRight: 0
-  movSpeed: 0
+  movSpeed: 2.5
   deathSound: {fileID: 0}
   positionA: {fileID: 4335971616772978}
   positionB: {fileID: 4283698834889982}
   parent: {fileID: 1855239742130818}
-  projectile: {fileID: 1251496196258756, guid: 862db75937daad046b1888429fab1fd7, type: 2}
-  lower_rate: 20
+  projectile: {fileID: 0}
+  lower_rate: 0
 --- !u!212 &212044393953025246
 SpriteRenderer:
   m_ObjectHideFlags: 1
