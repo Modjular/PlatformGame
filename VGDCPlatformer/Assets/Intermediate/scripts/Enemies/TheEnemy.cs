@@ -41,22 +41,9 @@ public class TheEnemy : MonoBehaviour {
 
 	void shoot()
 	{
-		GameObject spike =  Instantiate(projectile, transform);
-
-		
-		//GameObject cube = Instantiate(projectile, transform.position, Quaternion.identity) as GameObject;
-        ////GameObject cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
-        //GameObject cube = new GameObject("snowball");
-        ////cube.AddComponent<Rigidbody>();
-        ////cube.transform.position = new Vector2(transform.position.x, transform.position.y);
-        //fast = cube.GetComponent<Rigidbody2D>();
-        //fast.velocity = new Vector2(-50, 0);
-
-		
-        ////cube.GetComponent<Rigidbody>().velocity = new Vector2(-20 * gameObject.transform.localScale.x, 0);
-		//Debug.Log("Facing value is: " + facing);
-		//Debug.Log("rotation value is:" + transform.rotation.y);
-        //cube.GetComponent<Rigidbody2D>().AddForce(transform.forward * 30);
+		try{
+			GameObject spike =  Instantiate(projectile, transform);
+		}catch(System.Exception e){};
 
 	}
 
