@@ -15,12 +15,12 @@ public class EnemyShoot : MonoBehaviour {
         
         int direction = -1;
         //shotBody.bodyType = RigidbodyType2D.Kinematic;
-        GameObject Snail = GameObject.Find("Enemy");
+        GameObject Snail = GameObject.Find("Shooter");
         TheEnemy controller = Snail.GetComponent<TheEnemy>();
-        direction = -(int)Snail.transform.localScale.x;
+        direction = (int)Snail.transform.localScale.x;
         shotBody = GetComponent<Rigidbody2D>();
         shotBody.velocity = new Vector2(10 * direction, 0);
-        shotBody.transform.position = new Vector2(Snail.transform.position.x, Snail.transform.position.y);
+        shotBody.transform.position = new Vector2(Snail.transform.position.x+1f, Snail.transform.position.y-1f);
         //shotBody.transform.rotation = new Quaternion(0,1,1,1);
         Debug.Log("Spike created");
 	}
