@@ -12,7 +12,7 @@ public class TheEnemy : MonoBehaviour {
     public Transform positionB;
 
     public GameObject parent;
-	public GameObject projectile;
+
 
 	
 

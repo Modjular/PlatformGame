@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class TheEnemyShoot : MonoBehaviour {
 
-	public bool moveRight = false; //checks if the enemy moves right or left
-	public float movSpeed = 2.5f; //movement of the enemy
+
 	public AudioClip deathSound;
 
     public GameObject parent;
