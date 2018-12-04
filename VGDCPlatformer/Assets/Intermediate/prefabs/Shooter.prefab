@@ -141,7 +141,7 @@ Transform:
   m_GameObject: {fileID: 1780374803274416}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 1, y: -0.9938663, z: 0.01171875}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children:
   - {fileID: 4912017009790852}
   - {fileID: 4152354438663752}
@@ -181,7 +181,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1543024875904922}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 20.804806, y: 45.67, z: 0.012598693}
+  m_LocalPosition: {x: 55.41, y: 47.47, z: 0.012598693}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4427248835112396}
@@ -301,7 +301,7 @@ MonoBehaviour:
   deathSound: {fileID: 0}
   parent: {fileID: 1543024875904922}
   projectile: {fileID: 1251496196258756, guid: 862db75937daad046b1888429fab1fd7, type: 2}
-  lower_rate: 50
+  lower_rate: 100
 --- !u!212 &212109123165097570
 SpriteRenderer:
   m_ObjectHideFlags: 1
