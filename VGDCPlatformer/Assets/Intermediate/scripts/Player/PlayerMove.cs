@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerMove : MonoBehaviour {
 
     [SerializeField] private float runSpeed;
+    public Animator animator;
     float horizontalMove = 0f;
     bool jump = false;
     bool pounce = false;
@@ -20,6 +21,7 @@ public class PlayerMove : MonoBehaviour {
     void Update()
     {
         horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
+        animator.SetFloat("speed", Mathf.Abs(horizontalMove));
         if (Input.GetButtonDown("Fire1"))
         {
             jump = true;

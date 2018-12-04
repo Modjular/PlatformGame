@@ -1260,6 +1260,11 @@ Prefab:
       propertyPath: runSpeed
       value: 120
       objectReference: {fileID: 0}
+    - target: {fileID: 114677478620741796, guid: fcb30cc1fc1d3e048bea4c8f19f8f82d,
+        type: 2}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 1175272957}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fcb30cc1fc1d3e048bea4c8f19f8f82d, type: 2}
   m_IsPrefabAsset: 0
@@ -3678,6 +3683,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8f18725fb05b4ce1a673af880a0d510, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &1175272957 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 95996424078323036, guid: fcb30cc1fc1d3e048bea4c8f19f8f82d,
+    type: 2}
+  m_PrefabInternal: {fileID: 281548365}
 --- !u!1 &1233402558
 GameObject:
   m_ObjectHideFlags: 0
