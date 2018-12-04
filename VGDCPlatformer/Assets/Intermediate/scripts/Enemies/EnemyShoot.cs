@@ -29,8 +29,10 @@ public class EnemyShoot : MonoBehaviour {
     {
         if (collision.gameObject.tag != "Enemy" && collision.gameObject.tag != "hitbox" && collision.gameObject.tag != "hurtbox")
         {
-            Destroy(this);
-            Destroy(parent);
+            
+            Destroy(gameObject);
         }
+        //Debug.Log("ONTRIGGERENTER2D, deleting this");
+        //Destroy(gameObject);
     }
 }

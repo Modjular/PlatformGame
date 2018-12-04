@@ -16,7 +16,9 @@ public class TheEnemyShoot : MonoBehaviour {
 
 	void shoot()
 	{
-		GameObject spike =  Instantiate(projectile, transform);
+        Vector3 offset = new Vector3(1 * (int)transform.localScale.x, 0, 0);
+        Quaternion rot = Quaternion.Euler(0,0,90 * -(int)transform.localScale.x);
+		GameObject spike =  Instantiate(projectile, transform.position + offset, rot);
         spike.GetComponent<EnemyShoot>().direction = (int)transform.localScale.x;
 	}
 
