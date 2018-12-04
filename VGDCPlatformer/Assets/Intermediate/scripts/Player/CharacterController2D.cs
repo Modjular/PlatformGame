@@ -50,6 +50,8 @@ public class CharacterController2D : MonoBehaviour
             m_PounceCharge = 0;
             transform.GetChild(1).gameObject.SetActive(false);
             transform.GetChild(2).gameObject.SetActive(false);
+            transform.GetChild(3).gameObject.SetActive(false);
+            transform.GetChild(4).gameObject.SetActive(false);
         }
     }
 
@@ -62,6 +64,7 @@ public class CharacterController2D : MonoBehaviour
             Vector3 targetVelocity = new Vector2(move * 10f, m_RigidBody2D.velocity.y);
 
             m_RigidBody2D.velocity = Vector3.SmoothDamp(m_RigidBody2D.velocity, targetVelocity, ref m_Velocity, m_MovementSmoothing);
+
 
             if (move > 0 && !m_FacingRight)
             {
@@ -94,8 +97,15 @@ public class CharacterController2D : MonoBehaviour
             m_Charged = true;
             m_PounceCharge += -0.2f;
             m_FallGravity *= 0.5f;
-            transform.GetChild(1).gameObject.SetActive(true);
-            transform.GetChild(2).gameObject.SetActive(false);
+            if (m_FacingRight){
+                transform.GetChild(1).gameObject.SetActive(true);
+                transform.GetChild(2).gameObject.SetActive(false);
+            }
+            else {
+                transform.GetChild(3).gameObject.SetActive(true);
+                transform.GetChild(4).gameObject.SetActive(false);
+            }
+
 
         }
         if (((pounce != true) && m_NotPounced && m_Charged) || (m_PounceCharge < -1f))
@@ -106,8 +116,17 @@ public class CharacterController2D : MonoBehaviour
             m_Charged = false;
             m_PounceCharge = m_DefaultPounceCharge;
             m_FallGravity = m_DefaultFallGravity;
-            transform.GetChild(1).gameObject.SetActive(true);
-            transform.GetChild(2).gameObject.SetActive(true);
+            if (m_FacingRight)
+            {
+                transform.GetChild(1).gameObject.SetActive(true);
+                transform.GetChild(2).gameObject.SetActive(true);
+            }
+            else
+            {
+                transform.GetChild(3).gameObject.SetActive(true);
+                transform.GetChild(4).gameObject.SetActive(true);
+            }
+
         }
     }
 
