@@ -14,9 +14,6 @@ public class TheEnemy : MonoBehaviour {
     public GameObject parent;
 	public GameObject projectile;
 
-	public int lower_rate;
-	private int time = 0;
-
 	
 
 	
@@ -41,24 +38,7 @@ public class TheEnemy : MonoBehaviour {
 		}
 	}
 
-	void shoot()
-	{
-		try{
-			GameObject spike =  Instantiate(projectile, transform);
-		}catch(System.Exception e){};
 
-	}
-
-	void FixedUpdate()
-	{
-		time ++;
-		if(time==lower_rate)
-		{
-			time=0;
-			shoot();
-		}
-
-	}
 	
 
 
