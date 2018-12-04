@@ -8,6 +8,7 @@ public class FadeToBlack : MonoBehaviour
 	private CanvasGroup canvasGroupBlack;
 	private CanvasGroup textCanvasGroup;
 	private CanvasGroup creditsCGroup;
+	private CanvasGroup replayCG;
 	public Image BlackImg;
 	[HideInInspector]
 	public bool winGet;
@@ -17,7 +18,8 @@ public class FadeToBlack : MonoBehaviour
 	{
 		textCanvasGroup = GameObject.Find("WinText").GetComponent<CanvasGroup>();
 		canvasGroupBlack = BlackImg.GetComponent<CanvasGroup>();
-		creditsCGroup = GameObject.Find("Credits").GetComponent<CanvasGroup>();
+		replayCG = GameObject.Find("RestartButton").GetComponent<CanvasGroup>();
+
 	}
 	
 	// Update is called once per frame
@@ -32,9 +34,10 @@ public class FadeToBlack : MonoBehaviour
 			{
 				textCanvasGroup.alpha += .01f;
 			}
-			if (textCanvasGroup.alpha < 1f && creditsCGroup.alpha < 1f)
+			if (textCanvasGroup.alpha >= 1f && replayCG.alpha < 1f)
 			{
-				creditsCGroup.alpha = .01f;
+				replayCG.interactable = true;
+				replayCG.alpha += .01f;
 			}
 		}
 	}
