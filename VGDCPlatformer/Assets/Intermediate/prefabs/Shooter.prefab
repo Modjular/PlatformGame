@@ -299,7 +299,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deathSound: {fileID: 0}
-  parent: {fileID: 0}
+  parent: {fileID: 1543024875904922}
   projectile: {fileID: 1251496196258756, guid: 862db75937daad046b1888429fab1fd7, type: 2}
   lower_rate: 50
 --- !u!212 &212109123165097570

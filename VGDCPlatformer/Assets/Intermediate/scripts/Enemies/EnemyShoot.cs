@@ -15,13 +15,10 @@ public class EnemyShoot : MonoBehaviour {
 	void Start () {
         
         int direction = -1;
-        //shotBody.bodyType = RigidbodyType2D.Kinematic;
-        GameObject Snail = GameObject.Find("Enemy");
-        TheEnemy controller = Snail.GetComponent<TheEnemy>();
-        direction = -(int)Snail.transform.localScale.x;
+
         shotBody = GetComponent<Rigidbody2D>();
         shotBody.velocity = new Vector2(10 * direction, 0);
-        shotBody.transform.position = new Vector2(Snail.transform.position.x, Snail.transform.position.y);
+        //shotBody.transform.position = new Vector2(Snail.transform.position.x, Snail.transform.position.y);
         //shotBody.transform.rotation = new Quaternion(0,1,1,1);
 	}
 	
