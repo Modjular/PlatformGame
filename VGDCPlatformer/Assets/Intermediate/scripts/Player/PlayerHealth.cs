@@ -47,8 +47,9 @@ public class PlayerHealth : MonoBehaviour {
                 if (!scriptP.m_NotPounced)
                 {
                     //to kill enemy, we tell the enemy script
-                    TheEnemy script = collide.gameObject.GetComponentInParent<TheEnemy>();
-                    script.Die();
+                    Destroy(collide.transform.parent.gameObject);
+                    //TheEnemy script = collide.gameObject.GetComponentInParent<TheEnemy>();
+                    //script.Die();
                 }
             };break;
         //Checks if the object is the players hitbox and the player is not pouncing
