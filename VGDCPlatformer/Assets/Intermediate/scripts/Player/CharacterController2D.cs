@@ -48,6 +48,8 @@ public class CharacterController2D : MonoBehaviour
             m_AirJumpsLeft = m_AirJumps;
             m_NotPounced = true;
             m_PounceCharge = 0;
+            transform.GetChild(1).gameObject.SetActive(false);
+            transform.GetChild(2).gameObject.SetActive(false);
         }
     }
 
@@ -92,6 +94,8 @@ public class CharacterController2D : MonoBehaviour
             m_Charged = true;
             m_PounceCharge += -0.2f;
             m_FallGravity *= 0.5f;
+            transform.GetChild(1).gameObject.SetActive(true);
+            transform.GetChild(2).gameObject.SetActive(false);
 
         }
         if (((pounce != true) && m_NotPounced && m_Charged) || (m_PounceCharge < -1f))
@@ -102,6 +106,8 @@ public class CharacterController2D : MonoBehaviour
             m_Charged = false;
             m_PounceCharge = m_DefaultPounceCharge;
             m_FallGravity = m_DefaultFallGravity;
+            transform.GetChild(1).gameObject.SetActive(true);
+            transform.GetChild(2).gameObject.SetActive(true);
         }
     }
 
