@@ -9,8 +9,7 @@ public class StartGameButton : MonoBehaviour
 	//function you assign to the button list thing
 	void Start()
 	{
-		storeSceneScript = GameObject.Find("storeScene").GetComponent<storeScene>();
-        DontDestroyOnLoad(GameObject.Find("storeScene"));
+
 	}
 
 	public void StartGame()
