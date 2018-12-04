@@ -7,17 +7,14 @@ public class EnemyShoot : MonoBehaviour {
     // Use this for initialization
 
     public GameObject parent;
-
+    public int direction = -1;
     private Rigidbody2D shotBody;
 
 
     // Creates the shootThing and decides which direction it will go, then makes it move
 	void Start () {
-        
-        int direction = -1;
-
         shotBody = GetComponent<Rigidbody2D>();
-        shotBody.velocity = new Vector2(10 * direction, 0);
+        shotBody.velocity = new Vector2(7 * direction, 0);
         //shotBody.transform.position = new Vector2(Snail.transform.position.x, Snail.transform.position.y);
         //shotBody.transform.rotation = new Quaternion(0,1,1,1);
 	}

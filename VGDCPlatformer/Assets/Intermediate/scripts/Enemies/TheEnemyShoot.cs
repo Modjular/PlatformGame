@@ -16,10 +16,8 @@ public class TheEnemyShoot : MonoBehaviour {
 
 	void shoot()
 	{
-		try{
-			GameObject spike =  Instantiate(projectile, transform);
-		}catch(System.Exception e){};
-
+		GameObject spike =  Instantiate(projectile, transform);
+        spike.GetComponent<EnemyShoot>().direction = (int)transform.localScale.x;
 	}
 
 	void FixedUpdate()
